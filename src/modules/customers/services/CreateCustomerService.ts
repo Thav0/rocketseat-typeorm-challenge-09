@@ -21,7 +21,7 @@ class CreateCustomerService {
     // check if user already exists
     const findUser = await this.customersRepository.findByEmail(email);
 
-    if (findUser) throw new AppError('User already exists', 401);
+    if (findUser) throw new AppError('User already exists');
 
     // isnert user database
     const user = await this.customersRepository.create({
